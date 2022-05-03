@@ -1,5 +1,5 @@
 import "./App.css";
-import { useContext, useEffect } from 'react'
+import { useContext, useEffect, useCallback } from 'react'
 import CountriesList from "./components/CountriesList";
 import Header from "./components/Header";
 import { GlobalContext } from ".";
@@ -11,16 +11,16 @@ function App() {
 
   const { theme, setCountries } = useContext(GlobalContext)
 
-  const fetchData = async () => {
+  const fetchData = useCallback(async () => {
     await axios.get("https://restcountries.com/v2/all").then(res => {
       const data = res.data;
       setCountries(data)
     });
-  };
+  }, [setCountries]);
 
   useEffect(() => {
     fetchData();
-  }, []);
+  }, [fetchData]);
 
   return (
     <div className={theme.toLowerCase()}>
