@@ -9,7 +9,7 @@ export default function CountryDetails() {
   let params = useParams();
 
   const { countryName } = params;
-  const { theme, countries } = useContext(GlobalContext);
+  const { theme } = useContext(GlobalContext);
 
   const [country, setCountry] = useState({});
 
