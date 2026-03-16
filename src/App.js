@@ -12,7 +12,7 @@ function App() {
   const { theme, setCountries } = useContext(GlobalContext)
 
   const fetchData = useCallback(async () => {
-    await axios.get("https://restcountries.com/v2/all").then(res => {
+    await axios.get("https://restcountries.com/v3.1/all?fields=name,region,capital,flags,population").then(res => {
       const data = res.data;
       setCountries(data)
     });

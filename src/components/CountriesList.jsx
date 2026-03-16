@@ -23,7 +23,7 @@ export default function CountriesList() {
     if (inputRef.current.value.toLowerCase()) {
       setFilterList(
         countries.filter(item =>
-          item.name.toLowerCase().includes(inputRef.current.value.toLowerCase())
+          item.name.common.toLowerCase().includes(inputRef.current.value.toLowerCase())
         )
       );
     } else {

@@ -351,7 +351,6 @@ a {
 
 @media screen and (min-width: 810px) {
   .detail-info-list {
-    height: 150px;
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
